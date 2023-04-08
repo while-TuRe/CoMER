@@ -79,6 +79,19 @@ gpus: 1
 ```
 
 ## Evaluation
+config environment:
+https://zhuanlan.zhihu.com/p/161728028
+```
+wget -O- http://cpanmin.us | perl - -l ~/perl5 App::cpanminus local::lib
+eval `perl -I ~/perl5/lib/perl5 -Mlocal::lib`
+echo 'eval `perl -I ~/perl5/lib/perl5 -Mlocal::lib`' >> ~/.bashrc
+echo 'export MANPATH=$HOME/perl5/man:$MANPATH' >> ~/.bashrc
+source ~/.bashrc
+
+cpan XML::LibXML
+```
+
+
 Metrics used in validation during the training process is not accurate.
 
 For accurate metrics reported in the paper, please use tools officially provided by CROHME 2019 oganizer:
@@ -96,4 +109,13 @@ unzip -q data.zip
 # evaluate model in lightning_logs/version_0 on all CROHME test sets
 # results will be printed in the screen and saved to lightning_logs/version_0 folder
 bash eval_all.sh 0
+```
+nohup ./start.sh >output.filename 2>&1 &
+
+## how to see data logged in model
+https://blog.csdn.net/weixin_44933805/article/details/118998102
+the data is in lightning_logs/version_1/events.out.tfevents.1680700550.user-virtual-machine.3007347.0
+```
+pip install tensorboard
+tensorboard --logdir=<存放tensorboard文件的文件夹名字>
 ```
