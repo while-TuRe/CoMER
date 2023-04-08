@@ -5,6 +5,11 @@ import numpy as np
 import torch
 from torch import Tensor
 
+class Reshape:
+    def __init__(self):
+        pass
+    def __call__(self, img: np.ndarray) -> np.ndarray:
+        return np.expand_dims(img, axis=2)
 
 class ScaleToLimitRange:
     def __init__(self, w_lo: int, w_hi: int, h_lo: int, h_hi: int) -> None:

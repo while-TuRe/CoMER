@@ -1,7 +1,7 @@
 import torchvision.transforms as tr
 from torch.utils.data.dataset import Dataset
 
-from .transforms import ScaleAugmentation, ScaleToLimitRange
+from .transforms import ScaleAugmentation, ScaleToLimitRange, Reshape
 
 K_MIN = 0.7
 K_MAX = 1.4
@@ -23,6 +23,7 @@ class CROHMEDataset(Dataset):
 
         trans_list += [
             ScaleToLimitRange(w_lo=W_LO, w_hi=W_HI, h_lo=H_LO, h_hi=H_HI),
+            Reshape(),
             tr.ToTensor(),
         ]
         self.transform = tr.Compose(trans_list)
