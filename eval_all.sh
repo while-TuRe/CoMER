@@ -6,6 +6,7 @@ version=$1
 export LgEvalDir=$(pwd)/lgeval
 export Convert2SymLGDir=$(pwd)/convert2symLG
 export PATH=$PATH:$LgEvalDir/bin:$Convert2SymLGDir
+export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 for y in '2014' '2016' '2019'
 do
