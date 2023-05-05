@@ -1,0 +1,25 @@
+nohup: ignoring input
+Global seed set to 7
+args
+Load data from: data.zip
+Traceback (most recent call last):
+  File "train.py", line 10, in <module>
+    save_config_overwrite=True
+  File "/home/kyf/anaconda3/envs/CoMER/lib/python3.7/site-packages/pytorch_lightning/utilities/cli.py", line 285, in __init__
+    self.instantiate_classes()
+  File "/home/kyf/anaconda3/envs/CoMER/lib/python3.7/site-packages/pytorch_lightning/utilities/cli.py", line 341, in instantiate_classes
+    self.instantiate_trainer()
+  File "/home/kyf/anaconda3/envs/CoMER/lib/python3.7/site-packages/pytorch_lightning/utilities/cli.py", line 359, in instantiate_trainer
+    self.trainer = self.trainer_class(**self.config_init["trainer"])
+  File "/home/kyf/anaconda3/envs/CoMER/lib/python3.7/site-packages/pytorch_lightning/trainer/connectors/env_vars_connector.py", line 40, in insert_env_defaults
+    return fn(self, **kwargs)
+  File "/home/kyf/anaconda3/envs/CoMER/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 346, in __init__
+    gpu_ids, tpu_cores = self._parse_devices(gpus, auto_select_gpus, tpu_cores)
+  File "/home/kyf/anaconda3/envs/CoMER/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1262, in _parse_devices
+    gpu_ids = device_parser.parse_gpu_ids(gpus)
+  File "/home/kyf/anaconda3/envs/CoMER/lib/python3.7/site-packages/pytorch_lightning/utilities/device_parser.py", line 91, in parse_gpu_ids
+    return _sanitize_gpu_ids(gpus)
+  File "/home/kyf/anaconda3/envs/CoMER/lib/python3.7/site-packages/pytorch_lightning/utilities/device_parser.py", line 164, in _sanitize_gpu_ids
+    f"You requested GPUs: {gpus}\n But your machine only has: {all_available_gpus}"
+pytorch_lightning.utilities.exceptions.MisconfigurationException: You requested GPUs: [0, 1, 2, 3]
+ But your machine only has: [0]
